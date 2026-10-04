@@ -98,7 +98,7 @@
             align-items: center;
         }
 
-        /* Slide Menu (Όπως στο CrookCatcher) */
+        /* Slide Menu */
         .side-menu {
             position: fixed;
             top: 0;
@@ -127,6 +127,7 @@
             font-size: 1.7rem;
             cursor: pointer;
             padding: 4px;
+            margin-bottom: 10px;
         }
 
         .side-menu a {
@@ -237,7 +238,13 @@
             margin-bottom: 6px;
         }
 
-        /* Footer (Όπως στο CrookCatcher) */
+        .link-email {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
         footer {
             border-top: 1px solid var(--border-color);
             padding: 40px 18px 30px 18px;
@@ -290,7 +297,7 @@
         </div>
     </header>
 
-    <!-- Side Menu (Ακριβώς τα 2 στοιχεία του CrookCatcher) -->
+    <!-- Side Menu -->
     <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
     <div class="side-menu" id="sideMenu">
         <button class="close-btn" onclick="toggleMenu()">✕</button>
@@ -343,12 +350,12 @@
             </div>
             <div class="card-body">
                 Για απορίες ή υποστήριξη σχετικά με τους όρους:<br>
-                <strong style="color: var(--accent-cyan);">wezdragon.security@gmail.com</strong>
+                <a href="mailto:wezdragon.security@gmail.com" class="link-email">wezdragon.security@gmail.com</a>
             </div>
         </div>
     </div>
 
-    <!-- Footer όπως ακριβώς στο CrookCatcher -->
+    <!-- Footer -->
     <footer>
         <div class="footer-brand">WeZdRaGoN</div>
         <div class="footer-links">
@@ -361,6 +368,7 @@
         </div>
     </footer>
 
+    <!-- Script for Menu -->
     <script>
         function toggleMenu() {
             document.getElementById('sideMenu').classList.toggle('open');
