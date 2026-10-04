@@ -1,261 +1,381 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Πολιτική Απορρήτου - WeZdRaGoN Security PRO</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-    body {
-      background-color: #0A0D10;
-      color: #9BA3AF;
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
-    /* Header / Navbar */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      background-color: #0A0D10;
-      border-bottom: 1px solid #1A222C;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-    .brand img {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-    }
-    .brand-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #FFFFFF;
-    }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .btn-get-app {
-      background-color: #00E5FF;
-      color: #0A0D10;
-      padding: 8px 18px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .btn-get-app:hover {
-      opacity: 0.9;
-    }
-    .menu-icon {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-    .menu-icon span {
-      width: 20px;
-      height: 2px;
-      background-color: #FFFFFF;
-      border-radius: 2px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πολιτική Απορρήτου - WeZdRaGoN Security PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f14;
+            --card-bg: #141b22;
+            --accent-cyan: #00E5FF;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --border-color: #21262d;
+            --badge-bg: #1a2733;
+        }
 
-    /* Container */
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 24px 18px;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
 
-    .badge-legal {
-      display: inline-block;
-      background: rgba(0, 229, 255, 0.12);
-      color: #00E5FF;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.8px;
-      margin-bottom: 12px;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
 
-    h1 {
-      color: #FFFFFF;
-      font-size: 1.85rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
+        /* Top Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 18px;
+            background: rgba(11, 15, 20, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
 
-    .subtitle {
-      font-size: 0.95rem;
-      color: #CBD5E1;
-      margin-bottom: 28px;
-    }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
 
-    /* Cards */
-    .card {
-      background-color: #13181E;
-      border: 1px solid #1C242D;
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 16px;
-    }
-    .card-icon {
-      width: 36px;
-      height: 36px;
-      background: rgba(0, 229, 255, 0.12);
-      color: #00E5FF;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      font-size: 1.1rem;
-    }
-    .card h2 {
-      color: #FFFFFF;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .card ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    .card ul li {
-      position: relative;
-      padding-left: 18px;
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-    }
-    .card ul li::before {
-      content: "•";
-      color: #00E5FF;
-      position: absolute;
-      left: 0;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-    .card p {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-    }
-    a.link-cyan {
-      color: #00E5FF;
-      text-decoration: none;
-      font-weight: 600;
-      word-break: break-all;
-    }
-    a.link-cyan:hover {
-      text-decoration: underline;
-    }
+        .header-brand img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.6));
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding-top: 30px;
-      font-size: 0.8rem;
-      color: #64748B;
-    }
-  </style>
+        .brand-title {
+            color: var(--accent-cyan);
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-get-app {
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .btn-get-app:hover {
+            background: var(--accent-cyan);
+            color: #000;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Slide Menu */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 280px;
+            height: 100%;
+            background: #10161d;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.7);
+            transition: right 0.3s ease;
+            z-index: 200;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .side-menu.open {
+            right: 0;
+        }
+
+        .side-menu .close-btn {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
+        .side-menu a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .side-menu a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 150;
+        }
+
+        .backdrop.open {
+            display: block;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+
+        .badge-legal {
+            display: inline-block;
+            background: var(--badge-bg);
+            color: var(--accent-cyan);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 6px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .page-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .intro-text {
+            color: #c9d1d9;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        /* Card Sections */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: rgba(0, 229, 255, 0.12);
+            color: var(--accent-cyan);
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .card-body {
+            color: #c9d1d9;
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+
+        .card-body ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .card-body li {
+            margin-bottom: 6px;
+        }
+
+        .link-text {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            margin-top: 30px;
+            padding: 0 16px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <a href="#" class="brand">
-      <div class="card-icon" style="margin: 0; width: 32px; height: 32px;">🛡️</div>
-      <div class="brand-title">WeZdRaGoN Security PRO</div>
-    </a>
-    <div class="nav-actions">
-      <a href="market://details?id=com.wezdragon.security" class="btn-get-app">Get the app</a>
-      <div class="menu-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="badge-legal">ΝΟΜΙΚΟ ΕΓΓΡΑΦΟ</div>
-    <h1>Πολιτική Απορρήτου</h1>
-    <p class="subtitle">Το WeZdRaGoN Security PRO σχεδιάστηκε με απόλυτο σεβασμό στην ιδιωτικότητά σας. Εδώ μπορείτε να δείτε αναλυτικά πώς προστατεύονται τα δεδομένα σας.</p>
-
-    <!-- Camera -->
-    <div class="card">
-      <div class="card-icon">📷</div>
-      <h2>Άδεια Κάμερας (Camera)</h2>
-      <ul>
-        <li>Η εφαρμογή χρησιμοποιεί την κάμερα αποκλειστικά για τη λήψη φωτογραφιών εισβολέα όταν καταχωρηθεί λανθασμένος κωδικός πρόσβασης / μοτίβο ξεκλειδώματος.</li>
-        <li>Δεν πραγματοποιείται καμία λήψη σε οποιαδήποτε άλλη στιγμή χωρίς ενέργεια αποτυχημένης πρόσβασης.</li>
-        <li>Οι φωτογραφίες αποθηκεύονται τοπικά στη συσκευή σας και αποστέλλονται απευθείας στο προσωπικό σας email (εφόσον είναι ενεργοποιημένη η ρύθμιση).</li>
-        <li>Τα δεδομένα δεν κοινοποιούνται ποτέ στον προγραμματιστή ή σε τρίτους.</li>
-      </ul>
-    </div>
-
-    <!-- Location -->
-    <div class="card">
-      <div class="card-icon">📍</div>
-      <h2>Τοποθεσία (Location)</h2>
-      <ul>
-        <li>Εφόσον ενεργοποιηθεί από τις ρυθμίσεις, η τοποθεσία καταγράφεται μόνο τη στιγμή της αποτυχημένης προσπάθειας ξεκλειδώματος.</li>
-        <li>Η εφαρμογή δεν παρακολουθεί την τοποθεσία της συσκευής στο παρασκήνιο σε άλλη χρονική στιγμή.</li>
-        <li>Οι συντεταγμένες αποστέλλονται μόνο στο δηλωμένο email σας μαζί με την αναφορά συμβάντος.</li>
-      </ul>
-    </div>
-
-    <!-- Email -->
-    <div class="card">
-      <div class="card-icon">✉️</div>
-      <h2>Αποστολή Email</h2>
-      <ul>
-        <li>Η εφαρμογή στέλνει ειδοποιήσεις και φωτογραφίες εισβολέα μόνο στη διεύθυνση email που έχετε ορίσει εσείς.</li>
-        <li>Δεν παρέχεται πρόσβαση ανάγνωσης των προσωπικών σας email, επαφών ή άλλων προσωπικών αρχείων.</li>
-        <li>Η διεύθυνσή σας παραμένει ιδιωτική και δεν μεταβιβάζεται πουθενά.</li>
-      </ul>
-    </div>
-
-    <!-- Data Security -->
-    <div class="card">
-      <div class="card-icon">🔒</div>
-      <h2>Ασφάλεια Δεδομένων (Data Security)</h2>
-      <p>Εκτιμούμε την εμπιστοσύνη σας. Όλα τα καταγεγραμμένα αρχεία αποθηκεύονται με ασφάλεια αποκλειστικά στη συσκευή σας ή αποστέλλονται απευθείας σε εσάς.</p>
-      <p>Κανένα προσωπικό δεδομένο δεν μεταβιβάζεται σε εξωτερικούς διακομιστές τρίτων για διαφημιστικούς ή άλλους σκοπούς.</p>
-    </div>
-
-    <!-- Contact -->
-    <div class="card">
-      <div class="card-icon">💬</div>
-      <h2>Επικοινωνία</h2>
-      <p>Για οποιαδήποτε διευκρίνιση ή υποστήριξη σχετικά με τα προσωπικά σας δεδομένα, μπορείτε να επικοινωνήσετε άμεσα μαζί μας:</p>
-      <p>
-        <a href="mailto:wezdragon.security@gmail.com?subject=Privacy%20Inquiry%20-%20WeZdRaGoN%20Security%20PRO" class="link-cyan">
-          wezdragon.security@gmail.com
+    <!-- Header -->
+    <header>
+        <a href="terms_use.html" class="header-brand">
+            <img src="logo.png" alt="WeZdRaGoN Security Logo">
+            <span class="brand-title">WeZdRaGoN Security PRO</span>
         </a>
-      </p>
+        <div class="header-actions">
+            <a href="https://play.google.com" class="btn-get-app">Get the app</a>
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Μενού">☰</button>
+        </div>
+    </header>
+
+    <!-- Side Menu -->
+    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
+    <div class="side-menu" id="sideMenu">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <a href="terms_use.html">Όροι Χρήσης</a>
+        <a href="privacy_policy.html" style="color: var(--accent-cyan);">Πολιτική Απορρήτου</a>
     </div>
 
-    <footer>
-      © 2026 WeZdRaGoN Security PRO. Με επιφύλαξη παντός δικαιώματος.
-    </footer>
-  </div>
+    <!-- Main Container -->
+    <div class="container">
+        <div class="badge-legal">Νομικό Έγγραφο</div>
+        <h1 class="page-title">Πολιτική Απορρήτου</h1>
+        <p class="intro-text">
+            Το <strong>WeZdRaGoN Security PRO</strong> σχεδιάστηκε με απόλυτο σεβασμό στην ιδιωτικότητά σας. Εδώ μπορείτε να δείτε αναλυτικά πώς προστατεύονται τα δεδομένα σας.
+        </p>
 
+        <!-- Κάμερα -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">📷</span>
+                <h2 class="card-title">Άδεια Κάμερας (Camera)</h2>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>Η εφαρμογή χρησιμοποιεί την κάμερα αποκλειστικά για τη λήψη φωτογραφιών εισβολέα όταν καταχωρηθεί λανθασμένος κωδικός πρόσβασης / μοτίβο ξεκλειδώματος.</li>
+                    <li>Δεν πραγματοποιείται καμία λήψη σε οποιαδήποτε άλλη στιγμή χωρίς ενέργεια αποτυχημένης πρόσβασης.</li>
+                    <li>Οι φωτογραφίες αποθηκεύονται τοπικά στη συσκευή σας και αποστέλλονται απευθείας στο προσωπικό σας email (εφόσον είναι ενεργοποιημένη η ρύθμιση).</li>
+                    <li>Τα δεδομένα δεν κοινοποιούνται ποτέ στον προγραμματιστή ή σε τρίτους.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Τοποθεσία -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">📍</span>
+                <h2 class="card-title">Τοποθεσία (Location)</h2>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>Εφόσον ενεργοποιηθεί από τις ρυθμίσεις, η τοποθεσία καταγράφεται μόνο τη στιγμή της αποτυχημένης προσπάθειας ξεκλειδώματος.</li>
+                    <li>Η εφαρμογή δεν παρακολουθεί την τοποθεσία της συσκευής στο παρασκήνιο σε άλλη χρονική στιγμή.</li>
+                    <li>Οι συντεταγμένες αποστέλλονται μόνο στο δηλωμένο email σας μαζί με την αναφορά συμβάντος.</li>
+                    <li>Τα δεδομένα τοποθεσίας δεν αποθηκεύονται σε εξωτερικούς διακομιστές.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Μικρόφωνο -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🎙️</span>
+                <h2 class="card-title">Μικρόφωνο (Microphone)</h2>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>Όταν ενεργοποιηθεί η εγγραφή ήχου/video, η εφαρμογή αποκτά πρόσβαση στο μικρόφωνο για την καταγραφή σύντομου ηχητικού ντοκουμέντου κατά την παραβίαση.</li>
+                    <li>Η πρόσβαση στο μικρόφωνο παραχωρείται μόνο όταν ενεργοποιήσετε ρητά αυτή τη δυνατότητα και χρησιμοποιείται αποκλειστικά κατά το συμβάν.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Email & OAuth -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">✉️</span>
+                <h2 class="card-title">Αποστολή Email & Google OAuth</h2>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>Η εφαρμογή χρησιμοποιεί το επίσημο σύστημα εξουσιοδότησης <strong>Google OAuth 2.0</strong> για την ασφαλή αποστολή ειδοποιήσεων απευθείας από το δικό σας λογαριασμό Gmail. Αυτό αποτρέπει τη διακίνηση ευαίσθητων δεδομένων μέσω τρίτων servers.</li>
+                    <li>Η άδεια αυτή δεν επιτρέπει στην εφαρμογή να διαβάζει τα εισερχόμενα emails σας ή τις επαφές σας.</li>
+                    <li>Μπορείτε ανά πάσα στιγμή να ανακαλέσετε την πρόσβαση μέσω της <a href="https://myaccount.google.com/permissions" class="link-text" target="_blank">διαχείρισης αδειών Google</a>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Data Security -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">🔒</span>
+                <h2 class="card-title">Ασφάλεια Δεδομένων (Data Security)</h2>
+            </div>
+            <div class="card-body">
+                Εκτιμούμε την εμπιστοσύνη σας. Όλα τα καταγεγραμμένα αρχεία αποθηκεύονται με ασφάλεια αποκλειστικά στη συσκευή σας ή αποστέλλονται απευθείας σε εσάς. Κανένα προσωπικό δεδομένο δεν μεταβιβάζεται σε διακομιστές τρίτων για διαφημιστικούς ή άλλους σκοπούς.
+            </div>
+        </div>
+
+        <!-- Επικοινωνία -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-icon">💬</span>
+                <h2 class="card-title">Επικοινωνία</h2>
+            </div>
+            <div class="card-body">
+                Για οποιαδήποτε διευκρίνιση ή υποστήριξη σχετικά με τα προσωπικά σας δεδομένα, μπορείτε να επικοινωνήσετε άμεσα μαζί μας:<br>
+                <a href="mailto:wezdragon.security@gmail.com" class="link-text">wezdragon.security@gmail.com</a>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 WeZdRaGoN Security PRO. Με επιφύλαξη παντός δικαιώματος.
+        </footer>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('open');
+            document.getElementById('backdrop').classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
