@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use - CyberShield</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0d1217;
@@ -13,7 +13,6 @@
             --text-main: #f0f6fc;
             --text-muted: #8b949e;
             --border-color: #212832;
-            --badge-bg: #102a33;
         }
 
         * {
@@ -29,12 +28,11 @@
             line-height: 1.6;
         }
 
-        /* Top Header */
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 20px;
+            padding: 16px 20px;
             background: rgba(13, 18, 23, 0.96);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
@@ -46,334 +44,92 @@
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 10px;
             text-decoration: none;
         }
 
         .header-brand img {
-            width: 80px;
-            height:80px;
+            width: 36px;
+            height: 36px;
             object-fit: contain;
-            filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.5));
+            filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
         }
 
         .brand-title {
             color: var(--text-main);
             font-size: 1.15rem;
             font-weight: 700;
-            letter-spacing: -0.3px;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .btn-get-app {
-            background: transparent;
-            color: var(--accent-cyan);
-            border: 1px solid var(--accent-cyan);
-            padding: 7px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-get-app:hover {
-            background: var(--accent-cyan);
-            color: #000;
-        }
-
-        .menu-btn {
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.6rem;
-            cursor: pointer;
-            padding: 4px;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Slide Menu */
-        .side-menu {
-            position: fixed;
-            top: 0;
-            right: -280px;
-            width: 280px;
-            height: 100%;
-            background: #0f151c;
-            box-shadow: -4px 0 25px rgba(0,0,0,0.8);
-            transition: right 0.25s ease;
-            z-index: 200;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .side-menu.open {
-            right: 0;
-        }
-
-        .side-menu .close-btn {
-            align-self: flex-end;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1.7rem;
-            cursor: pointer;
-            padding: 4px;
-            margin-bottom: 10px;
-        }
-
-        .side-menu a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 1.05rem;
-            font-weight: 600;
-            padding: 10px 0;
-            transition: color 0.2s;
-        }
-
-        .side-menu a:hover {
-            color: var(--accent-cyan);
-        }
-
-        .backdrop {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.65);
-            z-index: 150;
-        }
-
-        .backdrop.open {
-            display: block;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 28px 18px 40px 18px;
-        }
-
-        .badge-legal {
-            display: inline-block;
-            background: var(--badge-bg);
-            color: var(--accent-cyan);
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 6px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 14px;
-            border: 1px solid rgba(0, 229, 255, 0.25);
-        }
-
-        .page-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 12px;
             letter-spacing: -0.5px;
         }
 
-        .intro-text {
-            color: #c9d1d9;
-            font-size: 0.95rem;
-            margin-bottom: 28px;
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        /* Cards */
+        h1 {
+            color: var(--accent-cyan);
+            font-size: 2rem;
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 22px;
-            margin-bottom: 16px;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 14px;
-        }
-
-        .card-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            background: rgba(0, 229, 255, 0.12);
+        h2 {
             color: var(--accent-cyan);
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
         }
 
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .card-body {
-            color: #c9d1d9;
-            font-size: 0.92rem;
-            line-height: 1.65;
-        }
-
-        .card-body ul {
-            padding-left: 20px;
-            margin-top: 8px;
-        }
-
-        .card-body li {
-            margin-bottom: 6px;
-        }
-
-        .link-email {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-color);
-            padding: 40px 18px 30px 18px;
-            background: #090d11;
-            margin-top: 40px;
-        }
-
-        .footer-brand {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 18px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 28px;
-        }
-
-        .footer-links a {
+        p {
             color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-cyan);
-        }
-
-        .footer-copy {
-            color: #484f58;
-            font-size: 0.8rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
-        <a href="terms_use.html" class="header-brand">
-            <img src="logo.png" alt="Logo">
+        <a href="#" class="header-brand">
+            <img src="logo.png" alt="CyberShield Logo">
             <span class="brand-title">CyberShield</span>
         </a>
-        <div class="header-actions">
-            <a href="https://play.google.com" class="btn-get-app">Get the app</a>
-            <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
-        </div>
     </header>
 
-    <!-- Side Menu -->
-    <div class="backdrop" id="backdrop" onclick="toggleMenu()"></div>
-    <div class="side-menu" id="sideMenu">
-        <button class="close-btn" onclick="toggleMenu()">✕</button>
-        <a href="tutorials.html">Guides and Tutorials</a>
-        <a href="help.html">Help</a>
-    </div>
-
-    <!-- Main Container -->
     <div class="container">
-        <div class="badge-legal">LEGAL</div>
-        <h1 class="page-title">Terms of Use</h1>
-        <p class="intro-text">
-            By downloading CyberShield, you agree to the following terms and conditions. Please read them carefully.
-        </p>
+        <h1>Όροι Χρήσης & Ασφάλεια</h1>
 
         <div class="card">
-            <div class="card-header">
-                <span class="card-number">1</span>
-                <h2 class="card-title">Χρήση της Εφαρμογής</h2>
-            </div>
-            <div class="card-body">
-                Το CyberShield προορίζεται αποκλειστικά για προσωπική, μη εμπορική χρήση για την προστασία και ασφάλεια της συσκευής σας. Συμφωνείτε να χρησιμοποιείτε την εφαρμογή σύμφωνα με όλους τους ισχύοντες νόμους και κανονισμούς.
-            </div>
+            <h2>1. Εισαγωγή</h2>
+            <p>Το CyberShield αποτελεί ολοκληρωμένη λύση ασφαλείας για Android συσκευές, σχεδιασμένο να προστατεύει τα προσωπικά σας δεδομένα και να αποτρέπει μη εξουσιοδοτημένη πρόσβαση.</p>
         </div>
 
         <div class="card">
-            <div class="card-header">
-                <span class="card-number">2</span>
-                <h2 class="card-title">Δικαιώματα Διαχειριστή & Συστήματος</h2>
-            </div>
-            <div class="card-body">
-                Η εφαρμογή απαιτεί άδεια Διαχειριστή Συσκευής (Device Administrator) αποκλειστικά για την καταγραφή αποτυχημένων προσπαθειών εισαγωγής PIN/μοτίβου. Ο χρήστης έχει τον πλήρη έλεγχο ενεργοποίησης ή απενεργοποίησης της άδειας ανά πάσα στιγμή.
-            </div>
+            <h2>2. Αντικλεπτική Προστασία & Καταγραφή</h2>
+            <p>Σε περίπτωση εσφαλμένης εισαγωγής κωδικού, η εφαρμογή ενεργοποιεί αυτόματη λήψη μυστικής φωτογραφίας, βίντεο και ηχητικού κλιπ. Όλα τα αποδεικτικά στοιχεία αποστέλλονται άμεσα μέσω email μαζί με την ακριβή τοποθεσία GPS και χρονοσφραγίδα.</p>
         </div>
 
         <div class="card">
-            <div class="card-header">
-                <span class="card-number">3</span>
-                <h2 class="card-title">Περιορισμός Ευθύνης</h2>
-            </div>
-            <div class="card-body">
-                Η εφαρμογή παρέχεται «ως έχει» (as-is). Καταβάλλεται κάθε προσπάθεια για τη διασφάλιση της άψογης λειτουργίας της, αλλά δεν φέρουμε ευθύνη για τυχόν ζημίες ή απώλειες που μπορεί να προκύψουν από εσφαλμένη χρήση ή τεχνικές ασυμβατότητες της συσκευής.
-            </div>
+            <h2>3. Προστασία SIM & Έλεγχος Υλικού</h2>
+            <p>Η εφαρμογή παρακολουθεί αλλαγές στην κάρτα SIM, ενεργοποιεί συναγερμό υψηλής έντασης για άμεσο τοπικό εντοπισμό και εμφανίζει αποτρεπτικό μήνυμα στην οθόνη κλειδώματος.</p>
         </div>
 
         <div class="card">
-            <div class="card-header">
-                <span class="card-number">4</span>
-                <h2 class="card-title">Επικοινωνία</h2>
-            </div>
-            <div class="card-body">
-                Για απορίες ή υποστήριξη σχετικά με τους όρους:<br>
-                <a href="mailto:wezdragon.security@gmail.com" class="link-email">wezdragon.security@gmail.com</a>
-            </div>
+            <h2>4. Βιομετρικός Έλεγχος & Κλείδωμα</h2>
+            <p>Αποκλείεται η πρόσβαση στην κουρτίνα ειδοποιήσεων (status bar/quick settings) και απενεργοποιείται η λειτουργία του πλαϊνού πλήκτρου ισχύος, επιτρέποντας την πρόσβαση στη συσκευή αποκλειστικά μέσω βιομετρικής ταυτοποίησης (Face ID ή δακτυλικό αποτύπωμα).</p>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-brand">CyberShield</div>
-        <div class="footer-links">
-            <a href="help.html">Help</a>
-            <a href="terms_use.html">Terms of use</a>
-            <a href="privacy_policy.html">Privacy Policy</a>
-        </div>
-        <div class="footer-copy">
-            Copyright © 2026 CyberShield.
-        </div>
-    </footer>
-
-    <!-- Script for Menu -->
-    <script>
-        function toggleMenu() {
-            document.getElementById('sideMenu').classList.toggle('open');
-            document.getElementById('backdrop').classList.toggle('open');
-        }
-    </script>
 </body>
 </html>
