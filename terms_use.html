@@ -44,20 +44,21 @@
         .header-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
         }
 
+        /* Μεγαλύτερο λογότυπο στο Header */
         .header-brand img {
-            width: 36px;
-            height: 36px;
+            width: 48px;
+            height: 48px;
             object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
+            filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.6));
         }
 
         .brand-title {
             color: var(--text-main);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
@@ -68,12 +69,28 @@
             padding: 0 20px;
         }
 
+        /* Μεγάλο κεντρικό λογότυπο CyberShield */
+        .page-logo-wrapper {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .page-logo {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.5));
+        }
+
         h1 {
             color: var(--accent-cyan);
             font-size: 2rem;
             margin-bottom: 24px;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 12px;
+            text-align: center;
         }
 
         .card {
@@ -83,6 +100,12 @@
             padding: 24px;
             margin-bottom: 20px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-cyan);
         }
 
         h2 {
@@ -101,13 +124,18 @@
 <body>
 
     <header>
-        <a href="#" class="header-brand">
+        <a href="index.html" class="header-brand">
             <img src="logo.png" alt="CyberShield Logo">
             <span class="brand-title">CyberShield</span>
         </a>
     </header>
 
     <div class="container">
+        <!-- Κεντρικό μεγάλο λογότυπο -->
+        <div class="page-logo-wrapper">
+            <img src="logo.png" alt="CyberShield Logo" class="page-logo">
+        </div>
+
         <h1>Όροι Χρήσης & Ασφάλεια</h1>
 
         <div class="card">
